@@ -8,6 +8,6 @@ export class BannerComponent implements OnInit {
   constructor ( private movieAPI: MovieApiService ) {}
 
   ngOnInit(): void {
-    this.movieAPI.bannerApiData().subscribe( result => this.bannerList = result.results );
+    this.movieAPI.fetchBannerDetails().subscribe( result => this.bannerList = result.results );
   }
 }
