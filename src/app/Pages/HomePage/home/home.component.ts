@@ -4,7 +4,6 @@ import { Title,Meta } from '@angular/platform-browser';
 
 @Component({ selector: 'app-home', templateUrl: './home.component.html', styleUrls: ['./home.component.css'] })
 export class HomeComponent {
-  bannerList: any[] = [];
   trendingMovieResult: any = [];
   actionMovieResult: any = [];
   adventureMovieResult: any = [];
@@ -20,7 +19,6 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.bannerData();
     this.trendingData();
     this.actionMovie();
     this.adventureMovie();
@@ -32,13 +30,6 @@ export class HomeComponent {
   }
 
 
-  // bannerdata
-  bannerData() {
-    this.movieAPI.bannerApiData().subscribe((result) => {
-      console.log(result, 'bannerList#');
-      this.bannerList = result.results;
-    });
-  }
 
   trendingData() {
     this.movieAPI.trendingMovieApiData().subscribe((result) => {
